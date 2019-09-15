@@ -1,0 +1,28 @@
+//mixin section
+@mixin welcome-section-mixin{
+	width: 100%;
+	height: auto;
+	position: relative;
+	display: block;
+	font-size: $welcome-heading-style;
+	text-transform: uppercase;
+	top: $welcome-top;
+	font-weight: bold;
+	color: #000;
+}
+
+
+@mixin course-elements-style{
+	margin-top: 20px;
+}
+@mixin course-heading-style{
+	width: auto;
+	height: auto;
+	font-size: 30px;
+	font-weight: bold;
+	background-color: #E67E22;
+	color: #fff;
+	padding: 20px;
+	display: block;
+
+}

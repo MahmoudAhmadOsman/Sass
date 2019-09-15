@@ -1,0 +1,152 @@
+//Import -> importing files from differnt files to your main css stylesheet
+//This is how you import them to your main stylesheet
+//Whatever stylesheet you import first, it's style is going to be first
+//This will allow you to organize your code as it gets bigger and bigger
+
+@import "reset";
+@import "variables";
+@import "mixins";
+
+//Layover is not working for now and I don't know why
+.lay-over{
+	width: 100%;
+	min-height: 100vh;
+	background: rgba(0,0,0,0.1);
+	display: block;
+	position: relative;
+	// z-index: -1;
+	overflow: hidden;
+
+.header-image {
+	width: 100%;
+	height: 100vh;
+	background:url('../images/back-image.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center;
+	background-attachment: cover;
+	position: relative;
+	display: block;
+	// z-index: 1;
+	overflow: hidden;
+	//transform: translate(0%, 0%) translate3d(0px, 0px, 0px);
+
+.navbar-inverse{
+	width: 100%;
+	background-color: $nav-bg-color;
+	border-bottom: $nav-bg-color;
+}
+
+.dropdown-menu{
+	background-color:$nav-ul-dropdown;
+}
+.navbar-inverse .navbar-nav>li>a{
+	color: $nav-ul-color;
+	transition: hover .4s ease-in-out;
+	-webkit-transition: background .4s ease-in-out;
+	-ms-transition: background .4s ease-in-out;
+	-moz-transition: background .4s ease-in-out;
+	-o-transition: background .4s ease-in-out;
+
+	//Hover in SaaS
+	//uses & and then :hover
+	//like this: &:Hover
+
+	&:hover{
+		//background: rgba(0,0,0,0.4);
+	background: lighten($nav-bg-color, 25%);
+	}
+}
+.navbar-inverse .navbar-brand{
+		color: $nav-ul-color;
+}
+.dropdown-menu>li>a{
+	background-color: $nav-ul-dropdown;
+	color: $nav-ul-color;
+}
+
+
+//@mixins are a block of  code that you can use for multiple elements at once instead of styling each element separatly.
+
+
+//Now user the mixin like this
+.welcome{
+	@include welcome-section-mixin;
+}
+.welcome p{
+		@include welcome-section-mixin;
+		font-weight: normal;
+		margin-bottom: 10px;
+		background-color: #fff;
+		padding: 20px;
+	}
+.welcome span{
+		color: #ff5733;
+		font-weight: bold;
+		cursor: pointer;
+		transition: background-color .3s ease-in-out;
+		-webkit-transition: background-color .3s ease-in-out;
+		-ms-transition: background-color .3s ease-in-out;
+		-moz-transition: background-color .3s ease-in-out;
+		-o-transition: background-color .3s ease-in-out;
+
+		&:hover{
+			background-color: lighten(#ff5733, 35%);
+			color: #000;
+			padding: 20px;
+		}
+	}
+.welcome h1{
+		@include welcome-section-mixin;
+		border-bottom: 10px solid #fff;
+		background-color: #fff;
+		padding: 20px;
+	}
+
+
+
+}
+
+} //End of lay-over braket
+
+
+/*Start of courses section */
+.courses{
+	width: 100%;
+	min-height: $course-height;
+	background-color: $course-bg-color;
+	display: block;
+
+	.course-box-one{
+		@include course-elements-style;
+		img{
+				border: 6px solid #333;
+			}
+			h3{
+				@include course-heading-style;
+			}
+
+	}
+	.course-box-two{
+		@include course-elements-style;
+		img{
+				border: 6px solid #333;
+			}
+			h3{
+				@include course-heading-style;
+			}
+	}
+	.course-box-three{
+		@include course-elements-style;
+		img{
+			border: 6px solid #333;
+		}
+		h3{
+			@include course-heading-style;
+		}
+	}
+
+
+
+}/*End of courses section */
