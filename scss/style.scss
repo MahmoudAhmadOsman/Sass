@@ -67,10 +67,8 @@
 }
 
 
-//@mixins are a block of  code that you can use for multiple elements at once instead of styling each element separatly.
-
-
-//Now user the mixin like this
+//@mixins are a  block of  code that you can use for multiple elements at once instead of styling each element separatly.
+//Now use the @mixin like this
 .welcome{
 	@include welcome-section-mixin;
 }
